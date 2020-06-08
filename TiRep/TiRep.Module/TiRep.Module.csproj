@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TiRep.Extensibility\TiRep.Extensibility.csproj" />
+    <ProjectReference Include="..\TiRep.Service\TiRep.Service.csproj" />
+  </ItemGroup>
+</Project>
