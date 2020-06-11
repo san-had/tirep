@@ -2,20 +2,8 @@
 
 namespace TiRep.Extensibility.Model
 {
-    public class TimeReportModel
+    public class TimeReportServiceModel
     {
-        public TimeReportModel(
-            DateTime startTime,
-            string recordId,
-            DateTime endTime,
-            TimeSpan deduction)
-        {
-            RecordId = recordId;
-            StartTime = startTime;
-            EndTime = endTime;
-            Deduction = deduction;
-        }
-
         public int Id { get; set; }
 
         public string RecordId { get; set; }

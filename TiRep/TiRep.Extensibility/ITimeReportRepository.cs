@@ -2,6 +2,6 @@
 {
     public interface ITimeReportRepository
     {
-        void CreateTimeReport()
+        void CreateTimeReport();
     }
 }

@@ -6,7 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TiRep.Extensibility\TiRep.Extensibility.csproj" />
+    <PackageReference Include="Ninject" Version="3.3.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TiRep.Module\TiRep.Module.csproj" />
+  </ItemGroup>
 </Project>
