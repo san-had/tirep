@@ -1,6 +1,9 @@
-﻿using Ninject;
+﻿using System;
+using Ninject;
+using TiRep.Domain;
 using TiRep.Extensibility;
 using TiRep.Extensibility.Dto;
+using TiRep.Service;
 
 namespace TiRep.Con
 {
@@ -13,7 +16,7 @@ namespace TiRep.Con
             var timeReport = new TimeReportDto
             {
                 StartTime = "6/4/2020 8:15:30 AM",
-                EndTime = "6/4/2020 16:21:30 AM",
+                EndTime = "6/4/2020 4:21:30 PM",
                 Deduction = "0:20:00"
             };
 
@@ -23,7 +26,12 @@ namespace TiRep.Con
         private static void WriteStartRecord(TimeReportDto timeReportDto)
         {
             var kernel = new StandardKernel();
+            //kernel.Bind<ITimeReportService>().To<TimeReportService>();
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            kernel.Load<ServiceNinjectModule>();
+            kernel.Load<DomainNinjectModule>();
             var timereportService = kernel.Get<ITimeReportService>();
+
             timereportService.CreateTimeReport(timeReportDto);
         }
     }

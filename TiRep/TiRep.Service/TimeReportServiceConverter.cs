@@ -25,13 +25,26 @@ namespace TiRep.Service
                 EndTime = DateTime.Parse(source.EndTime),
                 Deduction = TimeSpan.Parse(source.Deduction)
             };
+            timeReportServiceModel.Balance = timeReportServiceModel.EndTime
+                .Subtract(timeReportServiceModel.StartTime)
+                .Subtract(timeReportServiceModel.Deduction);
+
+            timeReportServiceModel.FinalBalance = timeReportServiceModel.FinalBalance.Add(timeReportServiceModel.Balance);
 
             return timeReportServiceModel;
         }
 
         public TimeReportDto Convert(TimeReportServiceModel source)
         {
-            throw new NotImplementedException();
+            var timeReportDto = new TimeReportDto
+            {
+                StartTime = source.StartTime.ToShortTimeString(),
+                EndTime = source.EndTime.ToShortTimeString(),
+                Deduction = source.Deduction.ToString(),
+                Balance = source.Balance.ToString(),
+                FinalBalance = source.FinalBalance.ToString()
+            };
+            return timeReportDto;
         }
     }
 }

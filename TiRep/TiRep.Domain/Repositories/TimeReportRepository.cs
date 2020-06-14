@@ -1,11 +1,12 @@
 ﻿using TiRep.Domain.Converters;
 using TiRep.Domain.Database.Model;
 using TiRep.Domain.Database.Providers;
+using TiRep.Extensibility;
 using TiRep.Extensibility.Model;
 
 namespace TiRep.Domain.Repositories
 {
-    public class TimeReportRepository
+    public class TimeReportRepository : ITimeReportRepository
     {
         private readonly MsSqlLiteDatabaseContext dbContext;
         private readonly ITimeReportEntityConverter timeReportEntityConverter;

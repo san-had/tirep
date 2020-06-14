@@ -7,5 +7,9 @@
         public string EndTime { get; set; }
 
         public string Deduction { get; set; }
+
+        public string Balance { get; set; }
+
+        public string FinalBalance { get; set; }
     }
 }

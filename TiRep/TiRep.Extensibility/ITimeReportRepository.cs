@@ -1,7 +1,9 @@
-﻿namespace TiRep.Extensibility
+﻿using TiRep.Extensibility.Model;
+
+namespace TiRep.Extensibility
 {
     public interface ITimeReportRepository
     {
-        void CreateTimeReport();
+        int Create(TimeReportServiceModel timeReportModel);
     }
 }
