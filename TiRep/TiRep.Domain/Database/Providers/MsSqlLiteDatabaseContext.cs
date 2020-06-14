@@ -8,6 +8,6 @@ namespace TiRep.Domain.Database.Providers
         public DbSet<TimeReportDbModel> TimeReports { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite("Data Source=timereporting.db");
+            => options.UseSqlite(@"Data Source=D:\GittHub\tirep\TiRep\TiRep.Domain\timereporting.db");
     }
 }
