@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TiRep.Domain\TiRep.Domain.csproj" />
     <ProjectReference Include="..\TiRep.Extensibility\TiRep.Extensibility.csproj" />
     <ProjectReference Include="..\TiRep.Service\TiRep.Service.csproj" />
   </ItemGroup>

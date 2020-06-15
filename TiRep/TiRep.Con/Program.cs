@@ -1,5 +1,4 @@
-﻿using System;
-using Ninject;
+﻿using Ninject;
 using TiRep.Domain;
 using TiRep.Extensibility;
 using TiRep.Extensibility.Dto;
@@ -26,8 +25,6 @@ namespace TiRep.Con
         private static void WriteStartRecord(TimeReportDto timeReportDto)
         {
             var kernel = new StandardKernel();
-            //kernel.Bind<ITimeReportService>().To<TimeReportService>();
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
             kernel.Load<ServiceNinjectModule>();
             kernel.Load<DomainNinjectModule>();
             var timereportService = kernel.Get<ITimeReportService>();
